@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="User.PluginIgnitionManager.SettingsControlDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:User.PluginIgnitionManager"
+             xmlns:styles="clr-namespace:SimHub.Plugins.Styles;assembly=SimHub.Plugins" mc:Ignorable="d" 
+             xmlns:ui="clr-namespace:SimHub.Plugins.UI;assembly=SimHub.Plugins" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <Grid>
+        <styles:SHSection Title="IGNITION MANAGER OPTIONS">
+            <StackPanel>
+                <ui:ControlsEditor FriendlyName="Turn Ignition On" ActionName="IgnitionManagerPlugin.SetIgnitionOn"></ui:ControlsEditor>
+                <ui:ControlsEditor FriendlyName="Turn Ignition Off" ActionName="IgnitionManagerPlugin.SetIgnitionOff"></ui:ControlsEditor>
+            </StackPanel>
+        </styles:SHSection>
+    </Grid>
+</UserControl>
