@@ -11,6 +11,18 @@
     <Grid>
         <styles:SHSection Title="IGNITION MANAGER OPTIONS">
             <StackPanel>
+
+                <Grid Margin="0 0 0 10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="60" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0">Enable Ignition Manager</Label>
+                    <styles:SHToggleButton x:Name="GlobalEnabledToggle" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="1" Height="20" Width="50" Checked="GlobalEnabledToggle_IsEnabledChanged" Unchecked="GlobalEnabledToggle_IsEnabledChanged" Loaded="GlobalEnabledToggle_Loaded" />
+                </Grid>
                 <ui:ControlsEditor FriendlyName="Turn Ignition On" ActionName="IgnitionManagerPlugin.SetIgnitionOn"></ui:ControlsEditor>
                 <ui:ControlsEditor FriendlyName="Turn Ignition Off" ActionName="IgnitionManagerPlugin.SetIgnitionOff"></ui:ControlsEditor>
             </StackPanel>

@@ -6,5 +6,6 @@
     public class IgnitionManagerPluginSettings
     {
         public int DelayInMs = 500;
+        public bool Enabled = true;
     }
 }

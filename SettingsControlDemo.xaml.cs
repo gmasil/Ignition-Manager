@@ -19,6 +19,14 @@ namespace User.PluginIgnitionManager
             this.Plugin = plugin;
         }
 
+        private void GlobalEnabledToggle_IsEnabledChanged(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Plugin.Settings.Enabled = GlobalEnabledToggle.IsChecked == true;
+        }
 
+        private void GlobalEnabledToggle_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            GlobalEnabledToggle.IsChecked = Plugin.Settings.Enabled;
+        }
     }
 }

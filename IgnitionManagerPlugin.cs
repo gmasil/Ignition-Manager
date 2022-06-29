@@ -42,18 +42,21 @@ namespace User.PluginIgnitionManager
         /// <param name="data">Current game data, including current and previous data frame.</param>
         public void DataUpdate(PluginManager pluginManager, ref GameData data)
         {
-            long Now = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-            if ((Now - LastUpdate) > Settings.DelayInMs)
+            if (Settings.Enabled)
             {
-                if (data.GameRunning)
+                long Now = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+                if ((Now - LastUpdate) > Settings.DelayInMs)
                 {
-                    if (data.OldData != null && data.NewData != null)
+                    if (data.GameRunning)
                     {
-                        if (IgnitionStatus != (data.NewData.EngineIgnitionOn != 0))
+                        if (data.OldData != null && data.NewData != null)
                         {
-                            // toggle ignition
-                            SendKeys.SendWait("I");
-                            LastUpdate = Now;
+                            if (IgnitionStatus != (data.NewData.EngineIgnitionOn != 0))
+                            {
+                                // toggle ignition
+                                SendKeys.SendWait("I");
+                                LastUpdate = Now;
+                            }
                         }
                     }
                 }
